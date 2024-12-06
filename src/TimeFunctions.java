@@ -17,10 +17,11 @@ public class TimeFunctions {
      * @return String in ISO 8061 UTC format.
      */
     public static String convertToISO8061(LocalDateTime dateTime) {
-        return dateTime.atZone(ZoneId.systemDefault())
-                       .withZoneSameInstant(ZoneOffset.UTC)
+        return dateTime.atOffset(ZoneOffset.UTC) // Treats the dateTime as UTC
                        .format(DateTimeFormatter.ISO_INSTANT);
     }
+    
+    
     /**
      * Returns the number of days between two LocalDate objects.
      * @param startDate The start date.
