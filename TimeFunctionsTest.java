@@ -15,5 +15,13 @@ public class TimeFunctionsTest {
         String result = TimeFunctions.convertToISO8061(date);
         assertEquals("2024-12-03T14:10:31Z", result, "ISO format mismatch");
     }
+    @Test
+    public void testDaysBetweenDates() {
+        LocalDate start = LocalDate.of(2024, 12, 1);
+        LocalDate end = LocalDate.of(2024, 12, 6);
+        long result = TimeFunctions.daysBetween(start, end);
+        assertEquals(5, result, "Days between dates mismatch");
+    }
+
 
 }
