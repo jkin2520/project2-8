@@ -11,7 +11,11 @@ public class TimeFunctions {
     public static LocalDateTime getCurrentDateTime() {
         return LocalDateTime.now();
     }
-    
+    /**
+     * Converts a LocalDateTime to an ISO 8061 UTC time string.
+     * @param dateTime The date and time to convert.
+     * @return String in ISO 8061 UTC format.
+     */
     public static String convertToISO8061(LocalDateTime dateTime) {
         return dateTime.atZone(ZoneId.systemDefault())
                        .withZoneSameInstant(ZoneOffset.UTC)
