@@ -21,5 +21,10 @@ public class TimeFunctions {
                        .withZoneSameInstant(ZoneOffset.UTC)
                        .format(DateTimeFormatter.ISO_INSTANT);
     }
+    
+    public static long daysBetween(LocalDate startDate, LocalDate endDate) {
+        return Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+    }
+
 
 }
