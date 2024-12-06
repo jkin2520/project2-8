@@ -21,7 +21,12 @@ public class TimeFunctions {
                        .withZoneSameInstant(ZoneOffset.UTC)
                        .format(DateTimeFormatter.ISO_INSTANT);
     }
-    
+    /**
+     * Returns the number of days between two LocalDate objects.
+     * @param startDate The start date.
+     * @param endDate The end date.
+     * @return Long representing days between dates.
+     */
     public static long daysBetween(LocalDate startDate, LocalDate endDate) {
         return Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
     }
